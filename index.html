@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverb & Delay Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div id="errorMessage" class="alert alert-danger" style="display: none">
+        <div class="errorinfo"> <strong>Error:</strong> <span id="errorText"></span>
+            <button type="button" class="close" onclick="dismissErrorMessage()">
+              &times;
+            </button></div>
+       
+      </div>
+
+      <h2>Reverb & Delay Calculator</h2>
+      <div class="form-group">
+        <!-- <label for="bpm">Enter BPM (Beats Per Minute):</label> -->
+        <input
+          type="number"
+          id="bpm"
+          class="form-control"
+          placeholder="Enter BPM"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- <label for="noteType">Select Note Type for Delay Calculation:</label> -->
+        <select id="noteType" class="form-control">
+          <option value="1">Whole Note</option>
+          <option value="0.5">Half Note</option>
+          <option value="0.25" selected>Quarter Note</option>
+          <option value="0.125">8th Note</option>
+          <option value="0.0625">16th Note</option>
+        </select>
+      </div>
+
+      <button id="calculate" class="btn btn-primary">Calculate</button>
+
+      <div class="results">
+        <h3>Results</h3>
+        <p><strong>Delay Time (ms): </strong><span id="delayTime"></span></p>
+        <p>
+          <strong>Reverb Pre-Delay (ms): </strong
+          ><span id="reverbPreDelay"></span>
+        </p>
+        <p>
+          <strong>Reverb Decay Time (s): </strong><span id="reverbDecay"></span>
+        </p>
+      </div>
+
+      <p>
+        <small>Made by TiebuStudiosGh</small>
+      </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
